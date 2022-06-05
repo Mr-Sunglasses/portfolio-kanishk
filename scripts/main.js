@@ -25,6 +25,8 @@ async function open_terminal(){
   createText("Welcome");
   await delay(700);
   createText("Starting the server...");
+  await delay(700)
+  createText("<a href='https://app.netlify.com/' target='_blank'><i class='fas fa-database'></i> Hosted with ❤️ on Netlify</a>")
   await delay(1500);
   createText("You can run several commands:");
  
