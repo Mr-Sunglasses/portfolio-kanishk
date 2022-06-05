@@ -21,6 +21,7 @@ app.addEventListener("click", function(event){
 
 
 async function open_terminal(){
+  createText("I ❤️ Linux 🐧")
   createText("Welcome");
   await delay(700);
   createText("Starting the server...");
@@ -44,7 +45,7 @@ function new_line(){
   p.setAttribute("class", "path")
   p.textContent = "# user";
   span1.textContent = " in";
-  span2.textContent = " ~/kanishk-pachauri";
+  span2.textContent = " ~/kanishk-pachauri🦄";
   p.appendChild(span1);
   p.appendChild(span2);
   app.appendChild(p);
