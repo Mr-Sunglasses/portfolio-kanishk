@@ -103,6 +103,8 @@ async function getInputValue(){
   else if(value === "blogs"){
     trueValue(value);
     createText("<a href='https://blog-kanishk.netlify.app/' target='_blank'><i class='fab fa-blogger'></i> blog-kanishk.netlify.app</a>")
+    createText("<a href='https://blog-kanishk.vercel.app/' target='_blank'><i class='fab fa-blogger'></i> blog-kanishk.vercel.app</a>")
+
   }
   else if(value === "clear"){
     document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
