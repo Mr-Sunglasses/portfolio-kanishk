@@ -21,7 +21,7 @@ app.addEventListener("click", function(event){
 
 
 async function open_terminal(){
-  createText("I ❤️ Linux 🐧")
+  createText("I ❤️ Linux 🐧 and Open-Source")
   createText("Welcome");
   await delay(700);
   createText("Starting the server...");
