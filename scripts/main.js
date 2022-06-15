@@ -114,7 +114,7 @@ async function getInputValue(){
   else if(value === "exit"){
     createText("Bye Bye 👋 😢");
     await delay(700);
-    window.location.replace("https://search.brave.com/");
+    window.location.href = "https://search.brave.com/" ;
   }
   else{
     falseValue(value);
