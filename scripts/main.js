@@ -77,7 +77,7 @@ async function getInputValue(){
     createCode("projects", "My github page with my projects. Follow me there ;)");
     createCode("about me", "Who am i and what do i do.");
     createCode("social -a", "All my social networks.");
-    createCode("blogs", "Link of my all blogs")
+    createCode("blogs", "All my Blogs")
     createCode("clear", "Clean the terminal.");
     
   }
