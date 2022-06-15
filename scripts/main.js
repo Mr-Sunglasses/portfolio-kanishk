@@ -33,7 +33,7 @@ async function open_terminal(){
   createCode("about me", "Who am i and what do i do.");
   createCode("ls", "See list of commands.");
   createCode("social -a", "All my social networks.");
-  createCode("exit", "To exit from the server")
+  createCode("exit", "To exit from the server");
 
   await delay(500);
   new_line();
