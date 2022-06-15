@@ -77,6 +77,7 @@ async function getInputValue(){
     createCode("projects", "My github page with my projects. Follow me there ;)");
     createCode("about me", "Who am i and what do i do.");
     createCode("social -a", "All my social networks.");
+    createCode("blogs", "Link of my all blogs")
     createCode("clear", "Clean the terminal.");
     
   }
@@ -99,7 +100,10 @@ async function getInputValue(){
     trueValue(value);
     createText("Didn't you mean: social -a?")
   }
-  
+  else if(value === "blogs"){
+    trueValue(value);
+    createText("<a href='https://blog-kanishk.netlify.app/' target='_blank'><i class='fab fa-blogger'></i> blog-kanishk.netlify.app</a>")
+  }
   else if(value === "clear"){
     document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
