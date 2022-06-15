@@ -33,6 +33,7 @@ async function open_terminal(){
   createCode("about me", "Who am i and what do i do.");
   createCode("ls", "See list of commands.");
   createCode("social -a", "All my social networks.");
+  createCode("exit", "To exit from the portfolio")
 
   await delay(500);
   new_line();
@@ -109,6 +110,11 @@ async function getInputValue(){
   else if(value === "clear"){
     document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
+  }
+  else if(value === "exit"){
+    createText("Bye Bye 👋 😢");
+    await delay(700);
+    window.location.replace("https://www.google.com/");
   }
   else{
     falseValue(value);
