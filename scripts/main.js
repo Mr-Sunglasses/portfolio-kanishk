@@ -114,6 +114,9 @@ async function getInputValue(){
   else if(value === "exit"){
     createText("Bye Bye 👋 😢");
     await delay(700);
+    
+    // We can use this
+    // window.location.replace("http://sidanmor.com");
     window.location.href = "https://search.brave.com/" ;
   }
   else{
