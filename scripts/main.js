@@ -1,6 +1,8 @@
 
 const app = document.querySelector("#app");
 const delay = ms => new Promise(res => setTimeout(res, ms));
+var audio = new Audio('music/musicfile.mp3');
+
     
     
 app.addEventListener("keypress", async function(event){
@@ -110,6 +112,16 @@ async function getInputValue(){
   else if(value === "clear"){
     document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
+  }
+  else if(value === "music"){
+    audio.play();
+  }
+  else if(value === "pause-music"){
+    audio.pause();
+  }
+  else if(value === "stop-music"){
+    audio.pause();
+	  audio.currentTime = 0;
   }
   else if(value === "exit"){
     createText("Bye Bye 👋 😢");
