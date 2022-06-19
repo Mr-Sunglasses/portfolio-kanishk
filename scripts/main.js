@@ -21,12 +21,13 @@ app.addEventListener("click", function(event){
 
 
 async function open_terminal(){
-  createText("I ❤️ Linux 🐧 and Open-Source")
+  createText("<a href='http://www.rememberaaronsw.com/oneyearlater/' target='_blank'> Gone, but never forgotten ❤️.Thank you Aaron 🙏</a>");
+  createText("I ❤️ Linux 🐧 and Open-Source");
   createText("Welcome");
   await delay(700);
   createText("Starting the server...");
   await delay(700);
-  createText("<a href='https://app.netlify.com/' target='_blank'><i class='fas fa-database'></i> Hosted with ❤️ on Netlify</a>")
+  createText("<a href='https://app.netlify.com/' target='_blank'><i class='fas fa-database'></i> Hosted with ❤️ on Netlify</a>");
   await delay(1500);
   createText("You can run several commands:");
  
