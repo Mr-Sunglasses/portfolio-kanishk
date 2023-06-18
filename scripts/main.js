@@ -1,6 +1,14 @@
 const app = document.querySelector("#app");
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+function redirect() {
+  // Redirect to the specified URL
+  window.location.href = "assets/resume/Kanishk-Resume.pdf";
+}
 
+function redirect_blog(){
+  // Redirect to the specified URL
+  window.location.href = "https://itskanishkp.hashnode.dev/";
+}
 app.addEventListener("keypress", async function (event) {
   if (event.key === "Enter") {
     await delay(150);
@@ -36,6 +44,8 @@ async function open_terminal() {
   createCode("ls", "See list of commands.");
   createCode("social -a", "All my social networks.");
   createCode("goals -a", "All of learning Goals for 2023");
+  createCode("blogs", "All my Blogs");
+  createCode("resume", "To see my Resume")
   createCode("exit", "To exit from the server");
 
   await delay(500);
@@ -79,15 +89,23 @@ async function getInputValue() {
       "My github page with my projects. Follow me there ;)"
     );
     createCode("about me", "Who am i and what do i do.");
+    createCode("goals -a", "All of learning Goals for 2023");
     createCode("social -a", "All my social networks.");
     createCode("blogs", "All my Blogs");
+    createCode("resume", "To see my Resume")
     createCode("clear", "Clean the terminal.");
   } else if (value === "projects") {
     trueValue(value);
     createText(
       "<a href='https://github.com/Mr-Sunglasses' target='_blank'><i class='fab fa-github white'></i> github.com/Mr-Sunglasses</a>"
     );
-  } else if (value === "about me") {
+  } else if (value === "resume") {
+    trueValue(value);
+    redirect();
+    // createText(
+    //   "<a href='assets/resume/Kanishk-Resume.pdf' target='_blank'><i class='fab fa-file white'></i> Kanishk Resume -> Click me 😊</a>"
+    // );
+  }else if (value === "about me") {
     trueValue(value);
     createText("Hi, my name is Kanishk ;)");
     createText(
@@ -109,12 +127,13 @@ async function getInputValue() {
     createText("Didn't you mean: social -a?");
   } else if (value === "blogs") {
     trueValue(value);
-    createText(
-      "<a href='https://blog-kanishk.netlify.app/' target='_blank'><i class='fab fa-blogger'></i> blog-kanishk.netlify.app</a>"
-    );
-    createText(
-      "<a href='https://blog-kanishk.vercel.app/' target='_blank'><i class='fab fa-blogger'></i> blog-kanishk.vercel.app</a>"
-    );
+    redirect_blog();
+    // createText(
+    //   "<a href='https://itskanishkp.hashnode.dev/' target='_blank'><i class='fab fa-blogger'></i> blog-kanishk.netlify.app</a>"
+    // );
+  }else if (value === "image") {
+    trueValue(value);
+    window.location.href = "assets/image/SAS_0250.JPG"
   } else if (value === "goals -a") {
     trueValue(value);
     createText("Here are my All Learning Goals for 2023");
