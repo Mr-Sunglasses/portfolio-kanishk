@@ -1,3 +1,3 @@
 # Terminal Style Portfolio Page
 
-https://kanishkpachauri.netlify.app/
+https://kanishk.fosscu.org
