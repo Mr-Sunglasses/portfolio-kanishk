@@ -107,9 +107,8 @@ async function getInputValue() {
     // );
   } else if (value === "about me") {
     trueValue(value);
-    createText("Hi, my name is Kanishk ;)");
     createText(
-      "A Python Developer and a Flutter Developer and <span class='blue'>and A Linux Lover from India</span> and I Build Beautiful IOS apps and also I had worked on different machine learning algorithm using Python."
+      "Kanishk Pachauri is a 🎓 Computer Science and Engineering Student from New Delhi, India 🇮🇳. From high school, he was passionate about Open-Source and Free Software. He loves to Contribute to Open-Source Software 🌐🔧 and he is actively contributing to psf, Robyn, and fosscu. He was also the Google Summer of Code intern for 2022 under the Python Software Foundation 🐍🌐 and currently, he is an Intern at Google in the Google Cloud Team ☁️🌟. He loves to share his knowledge of Open-Source and Free Software with others 🗣️📚. Previously he delivered talks at Pydelhi, Pycon France 2023, Pycon Australia 2023, FOSS United Delhi, and FOSSCU conference 🗣️🎤, and he hosted many sessions to promote the Knowledge of Open-Source Contributions and Community Work 👥🤝. In his free time, he loves playing around with open-source projects 🎮🔓."
     );
   } else if (value === "social -a") {
     trueValue(value);
