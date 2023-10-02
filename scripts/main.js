@@ -103,7 +103,7 @@ async function getInputValue() {
     trueValue(value);
     redirect();
     // createText(
-    //   "<a href='assets/resume/Kanishk-Resume.pdf' target='_blank'><i class='fab fa-file white'></i> Kanishk Resume -> Click me 😊</a>"
+    //   "<a href='assets/resume/Kanishk_Resume.pdf' target='_blank'><i class='fab fa-file white'></i> Kanishk Resume -> Click me 😊</a>"
     // );
   } else if (value === "about me") {
     trueValue(value);
