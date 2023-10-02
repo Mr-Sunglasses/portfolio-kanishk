@@ -2,7 +2,7 @@ const app = document.querySelector("#app");
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 function redirect() {
   // Redirect to the specified URL
-  window.location.href = "assets/resume/Kanishk-Resume.pdf";
+  window.location.href = "assets/resume/Kanishk_Resume.pdf";
 }
 
 function redirect_blog() {
