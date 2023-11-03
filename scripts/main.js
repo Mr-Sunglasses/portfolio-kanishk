@@ -9,6 +9,15 @@ function redirect_blog() {
   // Redirect to the specified URL
   window.location.href = "https://itskanishkp.hashnode.dev/";
 }
+
+function redirect_work_meet() {
+  window.location.href = "";
+}
+
+function redirect_friendly_meet(){
+  window.location.href = "";
+}
+
 app.addEventListener("keypress", async function (event) {
   if (event.key === "Enter") {
     await delay(150);
@@ -42,6 +51,7 @@ async function open_terminal() {
 
   createCode("about me", "Who am i and what do i do.");
   createCode("ls", "See list of commands.");
+  createCode("meet", "Schedule some time to meet")
   createCode("social -a", "All my social networks.");
   createCode("goals -a", "All of learning Goals for 2023");
   createCode("blogs", "All my Blogs");
@@ -89,10 +99,13 @@ async function getInputValue() {
       "My github page with my projects. Follow me there ;)"
     );
     createCode("about me", "Who am i and what do i do.");
-    createCode("goals -a", "All of learning Goals for 2023");
+    createCode("meet", "Schedule some time to meet")
     createCode("social -a", "All my social networks.");
+    createCode("goals -a", "All of learning Goals for 2023");
     createCode("blogs", "All my Blogs");
     createCode("resume", "To see my Resume");
+    createCode("exit", "To exit from the server");
+
     createCode("clear", "Clean the terminal.");
   } else if (value === "projects") {
     trueValue(value);
@@ -109,6 +122,11 @@ async function getInputValue() {
     trueValue(value);
     createText(
       "Kanishk Pachauri is a 🎓 Computer Science and Engineering Student from New Delhi, India 🇮🇳. From high school, he was passionate about Open-Source and Free Software. He loves to Contribute to Open-Source Software 🌐🔧 and he is actively contributing to psf, Robyn, and fosscu. He was also the Google Summer of Code intern for 2022 under the Python Software Foundation 🐍🌐 and currently, he is an Intern at Google in the Google Cloud Team ☁️🌟. He loves to share his knowledge of Open-Source and Free Software with others 🗣️📚. Previously he delivered talks at Pydelhi, Pycon France 2023, Pycon Australia 2023, FOSS United Delhi, and FOSSCU conference 🗣️🎤, and he hosted many sessions to promote the Knowledge of Open-Source Contributions and Community Work 👥🤝. In his free time, he loves playing around with open-source projects 🎮🔓."
+    );
+  } else if (value === "meet") {
+    trueValue(value);
+    createText(
+      "<a href='https://calendly.com/itskanishkp/kanishk-open-source-work-related' target='_blank'>Work 📂 (Open-Source) Related</a>"
     );
   } else if (value === "social -a") {
     trueValue(value);
@@ -129,7 +147,7 @@ async function getInputValue() {
     // );
   } else if (value === "image") {
     trueValue(value);
-    window.location.href = "assets/image/SAS_0250.JPG";
+    window.location.href = "assets/image/kanishk.jpg";
   } else if (value === "goals -a") {
     trueValue(value);
     createText("Here are my All Learning Goals for 2023");
