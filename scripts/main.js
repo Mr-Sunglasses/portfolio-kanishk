@@ -126,7 +126,7 @@ async function getInputValue() {
   } else if (value === "meet") {
     trueValue(value);
     createText(
-      "<a href='https://calendly.com/itskanishkp/kanishk-open-source-work-related' target='_blank'>Work 📂 (Open-Source) Related</a>"
+      "<a href='https://calendly.com/itskanishkp/kanishk-open-source-work-related' target='_blank'>Work 📂 (Open-Source) Related ( Click me 🤙🏻 )</a>"
     );
   } else if (value === "social -a") {
     trueValue(value);
