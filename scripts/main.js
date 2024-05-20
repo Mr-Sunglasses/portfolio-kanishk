@@ -1,13 +1,14 @@
 const app = document.querySelector("#app");
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+let commandHistory = [];
+let historyIndex = -1;
+
 function redirect() {
-  // Redirect to the specified URL
-  // window.location.href = "assets/resume/Kanishk_Resume.pdf";
-  createText("I'm Building a new one 🥲, I'll update it soon as possible 🙏🏻.")
+  createText("I'm Building a new one 🥲, I'll update it soon as possible 🙏🏻.");
 }
 
 function redirect_blog() {
-  // Redirect to the specified URL
   window.location.href = "https://blog.itskanishkp.me";
 }
 
@@ -15,7 +16,7 @@ function redirect_work_meet() {
   window.location.href = "";
 }
 
-function redirect_friendly_meet(){
+function redirect_friendly_meet() {
   window.location.href = "";
 }
 
@@ -23,10 +24,27 @@ app.addEventListener("keypress", async function (event) {
   if (event.key === "Enter") {
     await delay(150);
     getInputValue();
-
     removeInput();
     await delay(150);
     new_line();
+  }
+});
+
+app.addEventListener("keydown", function (event) {
+  const input = document.querySelector("input");
+  if (event.key === "ArrowUp") {
+    if (historyIndex > 0) {
+      historyIndex--;
+      input.value = commandHistory[historyIndex];
+    }
+  } else if (event.key === "ArrowDown") {
+    if (historyIndex < commandHistory.length - 1) {
+      historyIndex++;
+      input.value = commandHistory[historyIndex];
+    } else {
+      historyIndex = commandHistory.length;
+      input.value = "";
+    }
   }
 });
 
@@ -36,23 +54,19 @@ app.addEventListener("click", function (event) {
 });
 
 async function open_terminal() {
-  createText(
-    "<a href='http://www.rememberaaronsw.com/oneyearlater/' target='_blank'> Gone, but never forgotten ❤️.Thank you Aaron 🙏</a>"
-  );
+  createText("<a href='http://www.rememberaaronsw.com/oneyearlater/' target='_blank'> Gone, but never forgotten ❤️. Thank you Aaron 🙏</a>");
   createText("I ❤️ Linux 🐧 and Open-Source");
   createText("Welcome");
   await delay(700);
   createText("Starting the server...");
   await delay(700);
-  createText(
-    "<a href='https://app.netlify.com/' target='_blank'><i class='fas fa-database'></i> Hosted with ❤️ on Netlify</a>"
-  );
+  createText("<a href='https://app.netlify.com/' target='_blank'><i class='fas fa-database'></i> Hosted with ❤️ on Netlify</a>");
   await delay(1500);
   createText("You can run several commands:");
 
   createCode("about me", "Who am i and what do i do.");
   createCode("ls", "See list of commands.");
-  createCode("meet", "Schedule some time to meet")
+  createCode("meet", "Schedule some time to meet");
   createCode("social -a", "All my social networks.");
   createCode("blogs", "All my Blogs");
   createCode("resume", "To see my Resume");
@@ -91,57 +105,42 @@ function removeInput() {
 }
 
 async function getInputValue() {
-  const value = document.querySelector("input").value;
+  const input = document.querySelector("input");
+  const value = input.value;
+  commandHistory.push(value);
+  historyIndex = commandHistory.length;
+  
   if (value === "ls") {
     trueValue(value);
-
-    createCode(
-      "projects",
-      "My github page with my projects. Follow me there ;)"
-    );
+    createCode("projects", "My github page with my projects. Follow me there ;)");
     createCode("about me", "Who am i and what do i do.");
-    createCode("meet", "Schedule some time to meet")
+    createCode("meet", "Schedule some time to meet");
     createCode("social -a", "All my social networks.");
     createCode("blogs", "All my Blogs");
     createCode("resume", "To see my Resume");
     createCode("contact", "Contact me 🤝");
     createCode("exit", "To exit from the server");
-
     createCode("clear", "Clean the terminal.");
   } else if (value === "projects") {
     trueValue(value);
-    createText(
-      "<a href='https://github.com/Mr-Sunglasses' target='_blank'><i class='fab fa-github white'></i> github.com/Mr-Sunglasses</a>"
-    );
+    createText("<a href='https://github.com/Mr-Sunglasses' target='_blank'><i class='fab fa-github white'></i> github.com/Mr-Sunglasses</a>");
   } else if (value === "resume") {
     trueValue(value);
     redirect();
   } else if (value === "contact") {
     trueValue(value);
-    createText(
-      "<a href='https://t.me/thisiskanishkP' target='_blank'><i class='fab fa-telegram'></i> t.me/thisiskanishkP</a>"
-    );
-    createText(
-      "<a href='mailto:itskanishkp.py@gmail.com' target='_blank'><i class='far fa-envelope-open'></i> itskanishkp.py@gmail.com</a>"
-    );
+    createText("<a href='https://t.me/thisiskanishkP' target='_blank'><i class='fab fa-telegram'></i> t.me/thisiskanishkP</a>");
+    createText("<a href='mailto:itskanishkp.py@gmail.com' target='_blank'><i class='far fa-envelope-open'></i> itskanishkp.py@gmail.com</a>");
   } else if (value === "about me") {
     trueValue(value);
-    createText(
-      "Kanishk Pachauri is a 🎓 Computer Science and Engineering student from India 🇮🇳. Passionate about open-source and free software since high school, he actively contributes to projects like PSF, Robyn, and FOSSCU 🌐🔧. In 2022, he interned with the Python Software Foundation 🐍🌐 and with the Google Cloud Team ☁️. Kanishk frequently shares his open-source knowledge through talks at Pydelhi, PyCon France 2023, PyCon Australia 2023, FOSS United Delhi, and FOSSCU 🗣️🎤. In his free time, he enjoys working on open-source projects and playing around with new technologies 🎮🔓."
-    );
+    createText("Kanishk Pachauri is a 🎓 Computer Science and Engineering student from India 🇮🇳. Passionate about open-source and free software since high school, he actively contributes to projects like PSF, Robyn, and FOSSCU 🌐🔧. In 2022, he interned with the Python Software Foundation 🐍🌐 and with the Google Cloud Team ☁️. Kanishk frequently shares his open-source knowledge through talks at Pydelhi, PyCon France 2023, PyCon Australia 2023, FOSS United Delhi, and FOSSCU 🗣️🎤. In his free time, he enjoys working on open-source projects and playing around with new technologies 🎮🔓.");
   } else if (value === "meet") {
     trueValue(value);
-    createText(
-      "<a href='https://calendly.com/itskanishkp/kanishk-open-source-work-related' target='_blank'>Work 📂 (Open-Source) Related ( Click me 🤙🏻 )</a>"
-    );
+    createText("<a href='https://calendly.com/itskanishkp/kanishk-open-source-work-related' target='_blank'>Work 📂 (Open-Source) Related ( Click me 🤙🏻 )</a>");
   } else if (value === "social -a") {
     trueValue(value);
-    createText(
-      "<a href='https://github.com/Mr-Sunglasses' target='_blank'><i class='fab fa-github white'></i> github.com/Mr-Sunglasses</a>"
-    );
-    createText(
-      "<a href='https://www.linkedin.com/in/kanishk-pachauri-0161261b0/' target='_blank'><i class='fab fa-linkedin-in white'></i> linkedin.com/in/kanishk-pachauri</a>"
-    );
+    createText("<a href='https://github.com/Mr-Sunglasses' target='_blank'><i class='fab fa-github white'></i> github.com/Mr-Sunglasses</a>");
+    createText("<a href='https://www.linkedin.com/in/kanishk-pachauri-0161261b0/' target='_blank'><i class='fab fa-linkedin-in white'></i> linkedin.com/in/kanishk-pachauri</a>");
   } else if (value === "social") {
     trueValue(value);
     createText("Didn't you mean: social -a?");
@@ -153,15 +152,10 @@ async function getInputValue() {
     window.location.href = "assets/image/kanishk.jpg";
   } else if (value === "clear") {
     document.querySelectorAll("p").forEach((e) => e.parentNode.removeChild(e));
-    document
-      .querySelectorAll("section")
-      .forEach((e) => e.parentNode.removeChild(e));
+    document.querySelectorAll("section").forEach((e) => e.parentNode.removeChild(e));
   } else if (value === "exit") {
     createText("Bye Bye 👋 😢");
     await delay(700);
-
-    // We can use this
-    // window.location.replace("http://sidanmor.com");
     window.location.href = "https://search.brave.com/";
   } else {
     falseValue(value);
@@ -197,7 +191,6 @@ function falseValue(value) {
 
 function createText(text, classname) {
   const p = document.createElement("p");
-
   p.innerHTML = text;
   app.appendChild(p);
 }
