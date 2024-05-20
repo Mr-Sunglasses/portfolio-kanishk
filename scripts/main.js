@@ -2,12 +2,13 @@ const app = document.querySelector("#app");
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 function redirect() {
   // Redirect to the specified URL
-  window.location.href = "assets/resume/Kanishk_Resume.pdf";
+  // window.location.href = "assets/resume/Kanishk_Resume.pdf";
+  createText("I'm Building a new one 🥲, I'll update it soon as possible 🙏🏻.")
 }
 
 function redirect_blog() {
   // Redirect to the specified URL
-  window.location.href = "https://itskanishkp.hashnode.dev/";
+  window.location.href = "https://blog.itskanishkp.me";
 }
 
 function redirect_work_meet() {
@@ -53,9 +54,9 @@ async function open_terminal() {
   createCode("ls", "See list of commands.");
   createCode("meet", "Schedule some time to meet")
   createCode("social -a", "All my social networks.");
-  createCode("goals -a", "All of learning Goals for 2023");
   createCode("blogs", "All my Blogs");
   createCode("resume", "To see my Resume");
+  createCode("contact", "Contact me 🤝");
   createCode("exit", "To exit from the server");
 
   await delay(500);
@@ -101,9 +102,9 @@ async function getInputValue() {
     createCode("about me", "Who am i and what do i do.");
     createCode("meet", "Schedule some time to meet")
     createCode("social -a", "All my social networks.");
-    createCode("goals -a", "All of learning Goals for 2023");
     createCode("blogs", "All my Blogs");
     createCode("resume", "To see my Resume");
+    createCode("contact", "Contact me 🤝");
     createCode("exit", "To exit from the server");
 
     createCode("clear", "Clean the terminal.");
@@ -115,13 +116,18 @@ async function getInputValue() {
   } else if (value === "resume") {
     trueValue(value);
     redirect();
-    // createText(
-    //   "<a href='assets/resume/Kanishk_Resume.pdf' target='_blank'><i class='fab fa-file white'></i> Kanishk Resume -> Click me 😊</a>"
-    // );
+  } else if (value === "contact") {
+    trueValue(value);
+    createText(
+      "<a href='https://t.me/thisiskanishkP' target='_blank'><i class='fab fa-telegram'></i> t.me/thisiskanishkP</a>"
+    );
+    createText(
+      "<a href='mailto:itskanishkp.py@gmail.com' target='_blank'><i class='far fa-envelope-open'></i> itskanishkp.py@gmail.com</a>"
+    );
   } else if (value === "about me") {
     trueValue(value);
     createText(
-      "Kanishk Pachauri is a 🎓 Computer Science and Engineering Student from New Delhi, India 🇮🇳. From high school, he was passionate about Open-Source and Free Software. He loves to Contribute to Open-Source Software 🌐🔧 and he is actively contributing to psf, Robyn, and fosscu. He was also the Google Summer of Code intern for 2022 under the Python Software Foundation 🐍🌐 and currently, he is an Intern at Google in the Google Cloud Team ☁️🌟. He loves to share his knowledge of Open-Source and Free Software with others 🗣️📚. Previously he delivered talks at Pydelhi, Pycon France 2023, Pycon Australia 2023, FOSS United Delhi, and FOSSCU conference 🗣️🎤, and he hosted many sessions to promote the Knowledge of Open-Source Contributions and Community Work 👥🤝. In his free time, he loves playing around with open-source projects 🎮🔓."
+      "Kanishk Pachauri is a 🎓 Computer Science and Engineering student from India 🇮🇳. Passionate about open-source and free software since high school, he actively contributes to projects like PSF, Robyn, and FOSSCU 🌐🔧. In 2022, he interned with the Python Software Foundation 🐍🌐 and with the Google Cloud Team ☁️. Kanishk frequently shares his open-source knowledge through talks at Pydelhi, PyCon France 2023, PyCon Australia 2023, FOSS United Delhi, and FOSSCU 🗣️🎤. In his free time, he enjoys working on open-source projects and playing around with new technologies 🎮🔓."
     );
   } else if (value === "meet") {
     trueValue(value);
@@ -142,34 +148,9 @@ async function getInputValue() {
   } else if (value === "blogs") {
     trueValue(value);
     redirect_blog();
-    // createText(
-    //   "<a href='https://itskanishkp.hashnode.dev/' target='_blank'><i class='fab fa-blogger'></i> blog-kanishk.netlify.app</a>"
-    // );
   } else if (value === "image") {
     trueValue(value);
     window.location.href = "assets/image/kanishk.jpg";
-  } else if (value === "goals -a") {
-    trueValue(value);
-    createText("Here are my All Learning Goals for 2023");
-    createText("Languages ->");
-    createText(
-      "1 - Python | 2 - JavaScript and TypeScript| 3 - Go | 4 - C | 5 - Rust | 6 - C++"
-    );
-    createText("Essentials ->");
-    createText(
-      "1 - Linux + Shell Scripting | 2 - DBMS { SQL, MongoDB, Redis, Firebase } | 3 - Git + GitHub"
-    );
-    createText("Skills to Learn ->");
-    createText(
-      "1 - Full Stack Web Development | 2 - Mobile App Development | 3 - Devops | 4 - Linux Development"
-    );
-    createText("Core Computer Science ->");
-    createText("Concepts ->");
-    createText("1 - System Design | 2 - Design Pattern | 3 - Regex");
-    createText("Subjects ->");
-    createText(
-      "1 - Math for CS | 2 - Algorithms and Data Structures | 3 - Operating System | 4 - Computer Networking | 5 - Database | 6 - Distributed Systems"
-    );
   } else if (value === "clear") {
     document.querySelectorAll("p").forEach((e) => e.parentNode.removeChild(e));
     document
