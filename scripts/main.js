@@ -5,7 +5,7 @@ let commandHistory = [];
 let historyIndex = -1;
 
 function redirect() {
-  createText("I'm Building a new one 🥲, I'll update it soon as possible 🙏🏻.");
+  window.location.href = "assets/resume/Kanishk_Resume(Final).pdf";
 }
 
 function redirect_blog() {
