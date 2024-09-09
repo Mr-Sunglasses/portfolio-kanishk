@@ -9,7 +9,7 @@ function redirect() {
 }
 
 function redirect_blog() {
-  window.location.href = "https://blog.itskanishkp.me";
+  window.location.href = "https://blog.kanishkk.me";
 }
 
 function redirect_work_meet() {
