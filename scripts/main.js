@@ -5,7 +5,7 @@ let commandHistory = [];
 let historyIndex = -1;
 
 function redirect() {
-  window.location.href = "assets/resume/Kanishk_Resume (1).pdf";
+  window.location.href = "assets/Kanishk_Resume.pdf";
 }
 
 function redirect_blog() {
