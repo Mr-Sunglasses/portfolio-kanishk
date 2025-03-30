@@ -56,7 +56,7 @@ app.addEventListener("click", function (event) {
 async function open_terminal() {
   createText("<a href='http://www.rememberaaronsw.com/oneyearlater/' target='_blank'> Gone, but never forgotten ❤️. Thank you Aaron 🙏</a>");
   createText("I ❤️ Linux 🐧, Free Libre and Open-Source Software");
-  createText("<a href='http://www.rememberaaronsw.com/oneyearlater/' target='_blank'> Learn more about Free Libre and Open-Source Software Philosophy.</a>");
+  createText("<a href='https://www.gnu.org/philosophy/free-sw.html' target='_blank'> Learn more about Free Libre and Open-Source Software Philosophy.</a>");
   createText("Welcome");
   await delay(700);
   createText("Starting the server...");
