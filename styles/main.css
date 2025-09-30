@@ -36,12 +36,25 @@ a{
 }
 body{
   background-color:#393A59;
-
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   height: 100vh;
   font-family: 'Fira Code', monospace;
   display:flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.15;
 }
 .container{
   display:flex;
