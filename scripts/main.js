@@ -52,7 +52,7 @@ function redirect() {
 }
 
 function redirect_blog() {
-  window.location.href = "https://blog.kanishkk.me";
+  window.location.href = "https://blog.kanishkk.xyz";
 }
 
 function redirect_work_meet() {
