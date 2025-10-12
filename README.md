@@ -1,3 +1,3 @@
 # Terminal Style Portfolio Page
 
-https://itskanishkp.me/
+https://kanishkk.xyz/
